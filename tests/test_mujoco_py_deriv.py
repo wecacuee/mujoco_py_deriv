@@ -3,7 +3,6 @@ from multiprocessing import cpu_count, Pool
 import time
 
 import numpy as np
-from kwvars import kwvars, expand_variations
 import mujoco_py as mj
 from keyword2cmdline import command, func_kwonlydefaults
 

@@ -34,3 +34,13 @@ deriv = deriv_obj.compute()
 ```
 
 
+## Test case
+
+``` shellsession
+python test/test_mujoco_py_deriv.py
+```
+
+## Dynamics with derivatives
+
+Take a look at [mujoco_py_deriv_dynamics.py](mujoco_py_deriv_dynamics.py)
+

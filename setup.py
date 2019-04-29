@@ -24,12 +24,15 @@ extensions = [
 
 setup(
     name = 'mujoco_py_deriv',
-    version = '0.1.2',
+    version = '0.2.0',
     ext_modules = cythonize(extensions),
     package_data = {
         '': ['*.xml', '*.stl', '*.so', '*.pyd', '*.pyx'],
     },
+    py_modules=['mujoco_py_deriv_dynamics', 'mujoco_py_deriv_cacheutils',
+                'mujoco_py_deriv_mujoco_utils'],
     setup_requires=readlines('pip-requirements.txt'),
+    install_requires=readlines('pip-requirements.txt'),
 
 
     # metadata to display on PyPI
