@@ -7,7 +7,7 @@ from kwvars import kwvars, expand_variations
 import mujoco_py as mj
 from keyword2cmdline import command, func_kwonlydefaults
 
-from mujoco_py_deriv import PyMjDerivative, checkderiv
+from mujoco_py_deriv import MjDerivative, checkderiv
 
 
 def relpath(f, thisfile=__file__):
@@ -41,11 +41,11 @@ def main(path="flat_pusher_sample.xml",
     dmain = sim.data
 
     fs, xs = ["qacc"], ["qfrc_applied", "qvel", "qpos"]
-    deriv_fwd = PyMjDerivative(model, dmain, fs, xs, isforward=1,
+    deriv_fwd = MjDerivative(model, dmain, fs, xs, isforward=1,
                                nwarmup=nwarmup, eps=eps, nthread=nthread,
                                niter=niter)
     fs, xs = ["qfrc_inverse"], ["qacc", "qvel", "qpos"]
-    deriv_inv = PyMjDerivative(model, dmain, fs, xs, isforward=0,
+    deriv_inv = MjDerivative(model, dmain, fs, xs, isforward=0,
                                nwarmup=nwarmup, eps=eps, nthread=nthread,
                                niter=niter)
     # allocate statistics
