@@ -24,11 +24,20 @@ extensions = [
 
 setup(
     name = 'mujoco_py_deriv',
-    version = '0.1',
+    version = '0.1.1',
     ext_modules = cythonize(extensions),
     package_data = {
-        '': ['*.xml', '*.stl', '*.so', '*.pyd'],
+        '': ['*.xml', '*.stl', '*.so', '*.pyd', '*.pyx'],
     },
-    setup_requires=readlines('pip-requirements.txt')
+    setup_requires=readlines('pip-requirements.txt'),
+
+
+    # metadata to display on PyPI
+    author="Vikas Dhiman",
+    author_email="wecacuee@github.com",
+    description=readlines("README.md"),
+    license="MIT",
+    keywords="mujoco mujoco_py derivative",
+    url="https://github.com/wecacuee/mujoco_py_deriv",   # project home page, if any
 )
 

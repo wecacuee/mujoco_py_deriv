@@ -4,3 +4,4 @@ ve
 mujoco_py_deriv.c
 *.so
 *.egg-info
+dist
