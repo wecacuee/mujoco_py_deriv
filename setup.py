@@ -7,7 +7,7 @@ import os.path as op
 import numpy as np
 
 def readlines(f):
-    with open(f) as fh:
+    with open(f, encoding='utf-8') as fh:
         return fh.readlines()
 
 extensions = [
@@ -24,7 +24,7 @@ extensions = [
 
 setup(
     name = 'mujoco_py_deriv',
-    version = '0.1.1',
+    version = '0.1.2',
     ext_modules = cythonize(extensions),
     package_data = {
         '': ['*.xml', '*.stl', '*.so', '*.pyd', '*.pyx'],
